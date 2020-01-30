@@ -41,7 +41,7 @@ def short_url(request):
             )
 
             return JsonResponse(
-                {'status': True, 'msg': request.scheme + '://' + request.get_host() + '/' + slug.lower()},
+                {'status': True, 'msg': request.scheme + '://' + request.get_host() + '/' + slug},
                 status=200)
         else:
             return JsonResponse({'status': False, 'msg': 'Field cannot be empty'}, status=200)
