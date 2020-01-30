@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Hello!</h1>
+            <p class="lead">Using this service you can create a short URL in a few moments.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="border-right: #4f4f4f 1px solid;">
+                <p>After using button "Cut" you will get shorted URL by unique method. <br>
+                    You will get link that looks like {{ request.scheme }}://{{ request.META.HTTP_HOST }}/slug.
+                    <br><strong>Slug</strong> - it is the
+                    unique ID of base URL. </p>
+                <div class="input-group mb-3">
+                    <input type="text" id="input-base" class="form-control" placeholder="Base URL"
+                           aria-label="Base URL"
+                           aria-describedby="btnCut">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="button" id="btnCut">Cut</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <p>After using button "Get info" you will get information about how much visits on this link. <br>Please,
+                    fill the box below with link slug.
+                </p>
+                <div class="input-group mb-3">
+                    <input type="text" id="input-info" class="form-control" placeholder="Slug"
+                           aria-label="Slug"
+                           aria-describedby="btnInfo">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-info" type="button" id="btnInfo">Get info</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endblock %}
+
+{% block custom_js %}
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+    <script src="{% static 'main/ajax.js' %}"></script>
+{% endblock %}
