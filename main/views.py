@@ -3,7 +3,7 @@ from random import choice
 from urllib.parse import urlparse
 from django.http import JsonResponse, HttpResponseRedirect
 from .models import ShortedUrls
-
+from django.views.decorators.csrf import csrf_exempt
 
 # def url_checker(request):
 #     """Function that checks URL length more then 16 symbols"""
@@ -26,7 +26,7 @@ def url_splitter(full_url):
 
     return result
 
-
+@csrf_exempt
 def short_url(request):
     """Function that generates string for URL"""
     if request.is_ajax():
@@ -81,7 +81,7 @@ def view_main(request):
     """Function that renders main page for application"""
     return render(request, 'views/index.html')
 
-
+@csrf_exempt
 def get_count_url_visits(request):
     """Function that renders page with number of visits for shorted URL"""
     if request.is_ajax():
