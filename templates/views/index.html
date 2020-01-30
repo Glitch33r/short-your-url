@@ -15,7 +15,7 @@
                     You will get link that looks like {{ request.scheme }}://{{ request.META.HTTP_HOST }}/slug.
                     <br><strong>Slug</strong> - it is the
                     unique ID of base URL. </p>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="base">
                     <input type="text" id="input-base" class="form-control" placeholder="Base URL"
                            aria-label="Base URL"
                            aria-describedby="btnCut">
@@ -28,7 +28,7 @@
                 <p>After using button "Get info" you will get information about how much visits on this link. <br>Please,
                     fill the box below with link slug.
                 </p>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" id="info">
                     <input type="text" id="input-info" class="form-control" placeholder="Slug"
                            aria-label="Slug"
                            aria-describedby="btnInfo">

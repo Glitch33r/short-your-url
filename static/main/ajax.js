@@ -55,7 +55,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.status) {
                     $('.blockquote').remove();
-                    $(`<blockquote class="blockquote"><p class="mb-0">` + data.msg + `</p></blockquote>`).insertAfter('#info');
+                    $(`<blockquote class="blockquote"><p class="mb-0"><a href="` + data.msg + `">` + data.msg + `</a></p></blockquote>`).insertAfter('#info');
                     btn.removeAttr('disabled');
                     btn.html(`Get info`);
                 } else {
